@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'calc-boot';
+  title = 'Calculadora';
+  version = '2.0.0';
+  rating = 'teste'
+  rate = 'teste'
 }
