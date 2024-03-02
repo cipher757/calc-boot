@@ -1,12 +1,35 @@
-<form>
-  <input type="number" [(ngModel)]="num1" name="num1">
-  <input type="number" [(ngModel)]="num2" name="num2">
-  <button (click)="calc()">Somar</button>
-  <button (click)="calc2()">Subtrair</button>
-  <button (click)="calc3()">Multiplicar</button>
-  <button (click)="calc4()">Divisão</button>
-  {{divisao}}
-  {{multiplicacao}}
-  {{subtracao}}
-  {{soma}}
+<form class="container mt-5 bg-light border rounded p-4" style="max-width: 650px;">
+  <div class="row mb-3">
+    <div class="col">
+      <input type="text" class="form-control border-0 rounded-0 text-right" [(ngModel)]="num1" name="num1" placeholder="0">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control border-0 rounded-0 text-right" [(ngModel)]="num2" name="num2" placeholder="0">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary me-2" (click)="calc('+')">+</button>
+      <button class="btn btn-danger me-2" (click)="calc('-')">-</button>
+      <button class="btn btn-success me-2" (click)="calc('*')">x</button>
+      <button class="btn btn-warning me-2" (click)="calc('/')">÷</button>
+      <button class="btn btn-info me-2" (click)="calc('media')">Média</button>
+      <button class="btn btn-secondary" (click)="calc('porcentagem')">%</button>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col">
+      <p class="h3">Resultado: {{ resultado }}</p>
+    </div>
+  </div>
 </form>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 text-center">
+      <ngb-rating [(rate)]="rating" />
+      <hr />
+      <pre>Avaliação: <b>{{ rating }}</b></pre>
+    </div>
+  </div>
+</div>

@@ -6,28 +6,34 @@ import { Component } from '@angular/core';
   styleUrl: './calc.component.css'
 })
 export class CalcComponent {
-   num1: number = 0;
-   num2: number = 0;
-   soma: number = 0;
-   subtracao: number = 0;
-   multiplicacao: number = 0;
-   divisao: number = 0;
-   potencial: number = 0;
-   porcentagem: number = 0;
+  num1: number = 0;
+  num2: number = 0;
+  resultado: number = 0;
+  rating: number = 0;
 
-   calc(){
-     this.soma = this.num1 + this.num2;
-   }
-
-   calc2(){
-    this.subtracao = this.num1 - this.num2;
-   }
-
-   calc3(){
-    this.multiplicacao = this.num1 * this.num2;
-   }
-
-   calc4(){
-    this.divisao = this.num1 / this.num2;
-   }
+  calc(operador: string) {
+    switch (operador) {
+      case '+':
+        this.resultado = Number(this.num1) + Number(this.num2);
+        break;
+      case '-':
+        this.resultado = Number(this.num1) - Number(this.num2);
+        break;
+      case '*':
+        this.resultado = Number(this.num1) * Number(this.num2);
+        break;
+      case '/':
+        this.resultado = Number(this.num1) / Number(this.num2);
+        break;
+      case 'media':
+        this.resultado = (Number(this.num1) + Number(this.num2)) / 2;
+        break;
+      case 'porcentagem':
+        this.resultado = (Number(this.num1) * Number(this.num2)) / 100;
+        break;
+      default:
+        this.resultado = 0;
+        break;
+    }
+  }
 }

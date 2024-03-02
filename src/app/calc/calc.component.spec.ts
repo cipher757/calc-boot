@@ -11,7 +11,7 @@ describe('CalcComponent', () => {
       declarations: [CalcComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(CalcComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
